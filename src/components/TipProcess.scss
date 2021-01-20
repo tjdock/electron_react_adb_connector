@@ -1,0 +1,32 @@
+.tip .ant-modal-body {
+  background: #363738;
+  color: #9c9c9d;
+  height: 400px;
+  overflow-y: scroll;
+}
+.tip p {
+  line-height: 16px;
+  display: flex;
+}
+.tip span.status {
+  width: 80px;
+  display: inline-block;
+  text-align: justify;
+  margin-right: 7px;
+  flex: 0 0 auto;
+  &:after {
+    content: '';
+    display: inline-block;
+    padding-left: 100%;
+  }
+
+  &.success {
+    color: #52c41a;
+  }
+  &.error {
+    color: #f5222d;
+  }
+  &.warning {
+    color: #faad14;
+  }
+}

@@ -1,0 +1,103 @@
+@import './index.scss';
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  background: url('./assets/system_bg1.jpg') 50% 50% no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .left {
+    transition: all 0.3s;
+    width: 256px;
+    background: rgba(255, 255, 255, 0.4);
+    flex: 0 0 auto;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    &.collapsed {
+      width: 80px;
+    }
+
+    .top {
+      height: 64px;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top:0;
+    }
+  }
+
+  .right {
+    width: 100%;
+    flex: 1 1 auto;
+
+    .top {
+      height: 64px;
+      background: #478ede;
+      box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+      padding: $gap;
+      display: flex;
+      align-items: center;
+
+      img{
+        cursor: pointer;
+      }
+
+      .spacer {
+        width: 100%;
+      }
+
+      .logo-title {
+        width: 800px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        cursor: pointer;
+        p.cn {
+          font-weight: 500;
+          font-size: 20px;
+          margin: 0;
+          cursor: pointer;
+        }
+        p.en {
+          font-size: 12px;
+          margin: 0;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .hh {
+      height: 2px;
+      background: #f0f2f5;
+    }
+
+    .breadcrumb {
+      height: 38px;
+      background: #fff;
+      padding: 0 2 * $gap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .ant-breadcrumb {
+        font-size: 12px;
+      }
+
+      .spacer {
+        margin: 0 $gap;
+      }
+    }
+
+    .content {
+      padding: $gap * 2;
+      //background-color: #f0f2f5;
+      text-shadow: 1px 1px 1px #fff;
+      min-height: calc(100% - 64px - 40px);
+    }
+  }
+}

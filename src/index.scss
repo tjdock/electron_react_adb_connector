@@ -1,0 +1,178 @@
+$error: #f5222d;
+$success: #52c41a;
+$primary: #1890ff;
+$warning: #faad14;
+$gap: 10px;
+
+//scrollbar
+.mat-sidenav-content::-webkit-scrollbar,
+body::-webkit-scrollbar,
+mat-sidenav.sidenav::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.mat-sidenav-content::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+mat-sidenav.sidenav::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e;
+  outline: 1px solid #444;
+}
+
+.mat-sidenav-content::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+mat-sidenav.sidenav::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.white-bg {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: $gap;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+//small button table
+.ant-btn-sm {
+  font-size: 12px !important;
+}
+
+.ant-table-content {
+  font-size: 12px !important;
+}
+
+th.ant-table-cell {
+  font-weight: bold !important;
+}
+td.ant-table-cell.center {
+  text-align: center !important;
+  .ant-badge-status-text {
+    margin: 0 !important;
+  }
+}
+
+//360浏览器 select 省略号问题
+.custSelect .ant-select-selector .ant-select-selection-item {
+  width: 100%;
+}
+
+.custSubmenu {
+  border-right: none !important;
+  background: rgb(115, 169, 228) !important;
+  position: sticky;
+  top:64px;
+
+  .ant-menu-submenu {
+    color: #fff !important;
+
+    span {
+      color: #fff !important;
+    }
+  }
+
+  .ant-menu-submenu-arrow {
+    &:before,
+    &:after {
+      background: #fff !important;
+    }
+  }
+
+  .ant-menu-sub {
+    background: rgba(142, 183, 231, 0.66) !important;
+  }
+
+  .ant-menu-item-selected {
+    background: rgb(73, 126, 184) !important;
+  }
+}
+
+.ant-menu-submenu-popup > .ant-menu {
+  background-color: rgb(115, 169, 228) !important;
+
+  span {
+    color: #fff;
+  }
+}
+
+.ant-menu-item-selected,
+.ant-menu-item-active {
+  background: rgb(73, 126, 184) !important;
+}
+
+.ant-descriptions-item-label {
+  width: 120px !important;
+  font-size: 12px !important;
+}
+
+.ant-descriptions-item-content pre {
+  margin-bottom: 0;
+}
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: none !important;
+}
+.ant-descriptions-bordered .ant-descriptions-view {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid grba(255, 255, 255, 0.2) !important;
+}
+.ant-descriptions-bordered .ant-descriptions-row {
+  border-bottom: 1px solid #fff !important;
+}
+.ant-descriptions-bordered .ant-descriptions-item-content,
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  border-right: 1px solid #fff !important;
+}
+#nprogress {
+  .bar {
+    background: #fff !important; //自定义颜色
+  }
+
+  .spinner-icon {
+    border-top-color: white !important;
+    border-left-color: white !important;
+  }
+
+  .spinner {
+    top: 5px !important;
+    right: 5px !important;
+  }
+}
+
+//成功按钮
+.ant-btn-success {
+  background: $success !important;
+  border-color: $success !important;
+  color: #fff !important;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.ant-btn-link.success {
+  color: $success;
+  &:hover {
+    color: $success;
+  }
+}
+
+//上传附件
+.upload-list-inline .ant-upload-list-item {
+  float: left;
+  width: 200px;
+  margin-right: 8px;
+}
+
+.upload-list-inline [class*='-upload-list-rtl'] .ant-upload-list-item {
+  float: right;
+}
+
+.ant-table {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px);
+}
+.ant-table-small .ant-table-thead > tr > th {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+.ant-table-tbody tr:hover td:not([rowspan]) {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px);
+}
