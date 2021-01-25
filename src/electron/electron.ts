@@ -1,4 +1,5 @@
 import { app, BrowserWindow, ipcMain, protocol } from 'electron';
+import { LoginChannel } from './LoginChannel';
 import { IIpcChannel } from './shared/IIpcChannel';
 const isDev = require('electron-is-dev');
 const path = require('path');
@@ -16,10 +17,11 @@ class Main {
     this.registerIpcChannels(ipcChannels);
 
     //允许使用file协议
-    protocol.registerFileProtocol('file', (request, callback) => {
-      const pathname = decodeURI(request.url.replace('file:///', ''));
-      callback(pathname);
-    });
+    //todo
+    // protocol.registerFileProtocol('file', (request, callback) => {
+    //   const pathname = decodeURI(request.url.replace('file:///', ''));
+    //   callback(pathname);
+    // });
 
     //设置环境变量为当前安装目录
     const exec = require('child_process').exec;
@@ -78,5 +80,5 @@ class Main {
 
 
 (new Main()).init([
-
+  new LoginChannel()
 ]);

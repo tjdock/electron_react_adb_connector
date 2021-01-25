@@ -20,23 +20,26 @@ import { ConfigProvider } from 'antd';
 /*antd-ui , local import****************************************************************/
 
 /*redux import*/
-import createSagaMiddleware from 'redux-saga';
-import thunk from 'redux-thunk';
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { rootReducer, watchMain, watchUser } from './store';
+import { rootReducer } from './store';
+import { createEpicMiddleware } from 'redux-observable';
+import { userEpic } from './store/user/actions';
+import { mainEpic } from './store/main/actions';
 /*redux import****************************************************************/
 
 /*redux settings*/
-const sagaMiddleware = createSagaMiddleware();
 const history = createHashHistory();
+const epicMiddleware = createEpicMiddleware();
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk, sagaMiddleware, routerMiddleware(history))
+  applyMiddleware(epicMiddleware, routerMiddleware(history))
 );
-sagaMiddleware.run(watchMain);
-sagaMiddleware.run(watchUser);
+epicMiddleware.run(userEpic);
+epicMiddleware.run(mainEpic);
+
 
 
 /*antd settings*/

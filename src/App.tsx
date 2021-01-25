@@ -13,7 +13,8 @@ import { RootState } from './store';
 // import {login} from "./store/main/actions";
 import { Dict, MenuBar } from './store/dict/types';
 import { routesConfigs } from './routes.config';
-import { login, logout } from './store/main/actions';
+import { logout } from './store/main/actions';
+import { LOGIN } from './store/main/types';
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -61,7 +62,8 @@ const App: FC = () => {
       var users = localStorage.getItem("user");
       if (users) {
         var user = JSON.parse(users);
-        dispatch(login(user[0].userName, user[0].password));
+        //dispatch(login(user[0].userName, user[0].password));
+        //dispatch({ type: LOGIN, username: user[0].userName, password: user[0].password });
       }
     }
   }, [dispatch, menus, current, location.pathname, history, rootPath]);
